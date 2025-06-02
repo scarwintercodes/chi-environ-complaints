@@ -17,8 +17,16 @@ names(data)
 ######################################
 
 ## load CDPH data
-cdph <- GET("https://data.cityofchicago.org/resource/fypr-ksnz.json")
-cdph
+cdph_data <- read_csv("CDPH_Environmental_Complaints_20250601.csv")
 
-rawToChar(cdph$content)
-cdph_data <- fromJSON(rawToChar(cdph$content))
+# find and remove missing lat/lons
+sum(is.na(cdph_data$LATITUDE))
+sum(is.na(cdph_data$LONGITUDE))
+
+cdph_data_clean <- cdph_data %>% 
+  filter(!is.na(LATITUDE), !is.na(LONGITUDE))
+
+# convert to sf object
+cdph_data_sf <- st_as_sf(cdph_data_clean, 
+                         coords = c("LONGITUDE", "LATITUDE"),  # Note: order is lon, lat
+                         crs = 4326)
