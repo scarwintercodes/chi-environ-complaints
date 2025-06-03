@@ -1,11 +1,12 @@
-#install.packages(c("httr", "jsonlite", "tidyverse", "sf")) #enable API requests, data analysis, spatial processing
+#install.packages(c("httr", "jsonlite", "tidyverse", "sf", "terra")) #enable API requests, data analysis, spatial processing
 library(sf)
 library(jsonlite)
 library(httr)
 library(tidyverse)
+library(terra)
 
 #API call from Visual Crossing
-res <-GET("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Chicago?unitGroup=us&key=AMUYTVER39XM8FVY84ZLQSDHS&contentType=json")
+res <- GET("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Chicago?unitGroup=us&key=AMUYTVER39XM8FVY84ZLQSDHS&contentType=json")
 res
 
 #extract JSON format and preview
