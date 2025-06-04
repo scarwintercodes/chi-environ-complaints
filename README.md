@@ -1,7 +1,7 @@
 # chi-environ-complaints
 
 ### Analysis Goal:
-Mapping neighbors' complaints across Chicago overlaid with corresponding weather patterns. 
+Mapping neighbors' environmental complaints across Chicago overlaid with corresponding weather patterns. 
 
 ### Data Sources: 
 - **Visual Crossing: Historical Weather Data**: https://www.visualcrossing.com/weather-query-builder/
