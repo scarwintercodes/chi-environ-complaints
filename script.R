@@ -1,7 +1,7 @@
-#install.packages(c("httr", "jsonlite", "tidyverse", "sf", "terra")) #enable API requests, data analysis, spatial processing
+#install.packages(c("httr", "jsonlite", "tidyverse", "sf", "terra", "geojsonR")) #enable API requests, data analysis, spatial processing
 library(pacman)
 
-pacman::p_load(sf, jsonlite, httr, tidyverse, terra)
+pacman::p_load(sf, jsonlite, httr, tidyverse, terra, geojsonR)
 #API call from Visual Crossing
 res <- GET("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Chicago?unitGroup=us&key=AMUYTVER39XM8FVY84ZLQSDHS&contentType=json")
 res
