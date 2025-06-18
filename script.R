@@ -3,7 +3,7 @@ library(pacman)
 
 pacman::p_load(sf, jsonlite, httr, tidyverse, terra, geojsonR)
 #API call from Visual Crossing
-res <- GET("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Chicago?unitGroup=us&key=AMUYTVER39XM8FVY84ZLQSDHS&contentType=json")
+res <- GET("https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/Chicago/yeartodate/today?unitGroup=us&include=fcst%2Cremote%2Cstats%2Cobs%2Cdays&key=AMUYTVER39XM8FVY84ZLQSDHS&contentType=json")
 res
 
 #extract JSON format and preview
@@ -15,7 +15,7 @@ names(data)
 ######################################
 
 ## load CDPH data as geoJSON file
-cdph_data <- GET("https://data.cityofchicago.org/resource/fypr-ksnz.geojson")
+sf_read <-  sf::st_read("https://data.cityofchicago.org/resource/fypr-ksnz.geojson")
 
 # find and remove missing lat/lons
 sum(is.na(cdph_data$LATITUDE))
