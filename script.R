@@ -15,16 +15,12 @@ names(data)
 ######################################
 
 ## load CDPH data as geoJSON file
-sf_read <-  sf::st_read("https://data.cityofchicago.org/resource/fypr-ksnz.geojson")
+cdph <-  sf::st_read("https://data.cityofchicago.org/resource/fypr-ksnz.geojson?$limit=50000")
 
-# find and remove missing lat/lons
-sum(is.na(cdph_data$LATITUDE))
-sum(is.na(cdph_data$LONGITUDE))
+# find and remove missing lat/longs
+sum(is.na(cdph$latitude))
+sum(is.na(cdph$longitude))
 
-cdph_data_clean <- cdph_data %>% 
-  filter(!is.na(LATITUDE), !is.na(LONGITUDE))
+cdph_clean <- cdph %>% 
+  filter(!is.na(latitude), !is.na(longitude))
 
-# convert to sf object
-cdph_data_sf <- st_as_sf(cdph_data_clean, 
-                         coords = c("LONGITUDE", "LATITUDE"),  # Note: order is lon, lat
-                         crs = 4326)
