@@ -36,5 +36,13 @@ cdph_geo_only <- sf::st_geometry(cdph_clean)
 
 # Investigate geo object
 glimpse(cdph_geo_only)
+
+
+#explore combo cdph dataset
+
+colnames(cdph_clean)
 class(cdph_geo_only)
 
+# Interested in complaint dates from 2020 onward, need to filter out
+cdph_clean <- cdph_clean %>% 
+  filter(complaint_date)
