@@ -47,6 +47,6 @@ class(cdph_geo_only)
 cdph_clean <- cdph_clean %>% 
   filter(complaint_date >= "2025-01-01", complaint_date <= "2025-12-31")
 
-# want to break out complaints via a map. Time to visualize
+# want to break out complaints via a map. Time to visualize. Start off with basic map. 
 
 
