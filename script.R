@@ -15,7 +15,7 @@ names(data)
 ######################################
 
 ## load CDPH data as geoJSON file
-cdph <-  sf::st_read("https://data.cityofchicago.org/resource/fypr-ksnz.geojson?$limit=50000")
+cdph <-  sf::st_read("https://data.cityofchicago.org/api/v3/views/fypr-ksnz/query.json?$limit=50000")
 
 str(cdph)
 
