@@ -42,6 +42,7 @@ glimpse(cdph_geo_only)
 
 colnames(cdph_clean)
 class(cdph_geo_only)
+dim(cdph_clean)
 
 # Interested in complaint dates from 2025 onward, need to filter out
 cdph_clean <- cdph_clean %>% 
