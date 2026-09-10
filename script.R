@@ -44,9 +44,9 @@ colnames(cdph_clean)
 class(cdph_geo_only)
 dim(cdph_clean)
 
-# Interested in complaint dates from 2025 onward, need to filter out
+# Interested in complaint dates from 2026 onward, need to filter out
 cdph_clean <- cdph_clean %>% 
-  filter(complaint_date >= "2025-01-01", complaint_date <= "2025-12-31")
+  filter(complaint_date >= "2025-01-01", complaint_date <= "2026-12-31")
 
 # want to break out complaints via a map. Time to visualize. Start off with basic map. 
 
